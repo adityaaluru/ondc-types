@@ -1,0 +1,80 @@
+{
+  "context": {
+    "domain": "nic2004:52110",
+    "action": "init",
+    "core_version": "1.1.0",
+    "bap_id": "buyerapp.com",
+    "bap_uri": "https://buyerapp.com/ondc",
+    "bpp_id": "sellerapp.com",
+    "bpp_uri": "https://sellerapp.com/ondc",
+    "transaction_id": "9fdb667c-76c6-456a 9742-ba9caa5eb765",
+    "message_id": "1655281254862",
+    "city": "std:080",
+    "country": "IND",
+    "timestamp": "2023-02-03T09:00:00.000Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "P1",
+        "locations": [
+          {
+            "id": "L1"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "I1",
+          "fulfillment_id": "F1",
+          "quantity": {
+            "count": 1
+          }
+        }
+      ],
+      "billing": {
+        "name": "ONDCbuyer",
+        "address": {
+          "name": "My House #",
+          "door": "B005 aaspire heights",
+          "building75": "Mybuildingname",
+          "locality76": "MyStreetname",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "IND",
+          "area_code": "560037"
+        },
+        "email77": "nobody@nomail.com",
+        "phone": "9886098860",
+        "created_at78": "2023-02-03T09:00:00.000Z",
+        "updated_at": "2023-02-03T09:00:00.000Z"
+      },
+      "fulfillments": [
+        {
+          "id": "F1",
+          "type": "Delivery",
+          "provider_id": "sellerapp.com/logistics",
+          "end": {
+            "location": {
+              "gps": "12.9492953,77.7019878",
+              "address": {
+                "name": "My House #",
+                "door": "B005 aaspire heights",
+                "building": "My building name",
+                "locality": "My Street name",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560037"
+              }
+            },
+            "contact": {
+              "phone": "9886098860"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
