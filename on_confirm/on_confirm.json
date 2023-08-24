@@ -1,0 +1,233 @@
+{
+  "context": {
+    "domain": "nic2004:52110",
+    "action": "on_confirm",
+    "core_version": "1.1.0",
+    "bap_id": "buyerapp.com",
+    "bap_uri": "https://buyerapp.com/ondc",
+    "bpp_id": "sellerapp.com",
+    "bpp_uri": "https://sellerapp.com/ondc",
+    "transaction_id": "9fdb667c-76c6-456a 9742-ba9caa5eb765",
+    "message_id": "1655281254863",
+    "city": "std:080",
+    "country": "IND",
+    "timestamp": "2023-02-03T09:30:30.000Z"
+  },
+  "message": {
+    "order": {
+      "id": "O1",
+      "state": "Accepted93",
+      "provider": {
+        "id": "P1",
+        "locations": [
+          {
+            "id": "L1"
+          }
+        ],
+        "rateable": true
+      },
+      "items": [
+        {
+          "id": "I1",
+          "fulfillment_id": "F1",
+          "quantity": {
+            "count": 1
+          }
+        }
+      ],
+      "billing": {
+        "name": "ONDCbuyer",
+        "address": {
+          "name": "My house #",
+          "building": "My buildingname",
+          "door": "B005aaspireheights",
+
+          "locality": "Mystreetname",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "IND",
+          "area_code": "560037"
+        },
+        "email95": "nobody@nomail.com",
+        "phone": "9886098860",
+
+        "created_at96": "2023-02-03T09:00:00.000Z",
+        "updated_at97": "2023-02-03T09:00:00.000Z"
+      },
+      "fulfillments": [
+        {
+          "id": "F1",
+          "@ondc/org/provider_name": "Loadshare",
+          "state": {
+            "descriptor": {
+              "code": "Pending"
+            }
+          },
+          "type": "Delivery",
+          "tracking": false,
+          "start": {
+            "location": {
+              "id": "L1",
+              "descriptor": {
+                "name": "ABC Store"
+              },
+              "gps": "12.956399,77.636803"
+            },
+            "time": {
+              "range": {
+                "start": "2023-02-03T10:00:00.000Z",
+                "end": "2023-02-03T10:30:00.000Z"
+              }
+            },
+            "instructions98": {
+              "name": "Statusforpickup",
+              "short_desc": "Pickup ConfirmationCode"
+            },
+            "contact": {
+              "phone": "9886098860",
+              "email99": "nobody@nomail.com"
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "12.9492953,77.7019878",
+              "address": {
+                "name": "My house #",
+                "building": "My building name",
+                "door": "B005aaspireheights",
+                "locality": "My street name",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560037"
+              }
+            },
+            "time": {
+              "range": {
+                "start": "2023-02-03T11:00:00.000Z",
+                "end": "2023-02-03T11:30:00.000Z"
+              }
+            },
+            "instructions101": {
+              "name": "Statusfordrop",
+              "short_desc": "Delivery ConfirmationCode"
+            },
+            "contact": {
+              "phone": "9886098860"
+            }
+          },
+          "rateable": true
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "245"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "I1",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            },
+
+            "title": "Atta",
+            "@ondc/org/title_type": "item",
+            "price": {
+              "currency": "INR",
+              "value": "170"
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "170"
+              }
+            }
+          },
+          {
+            "@ondc/org/item_id": "F1",
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "50"
+            }
+          },
+          {
+            "@ondc/org/item_id": "F1",
+            "title": "Packing charges",
+            "@ondc/org/title_type": "packing",
+            "price": {
+              "currency": "INR",
+              "value": "25"
+            }
+          },
+          {
+            "@ondc/org/item_id": "I1",
+            "title": "Tax",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "0"
+            }
+          },
+          {
+            "@ondc/org/item_id": "I1",
+            "title": "Discount",
+            "@ondc/org/title_type": "discount",
+            "price": {
+              "currency": "INR",
+              "value": "-10"
+            }
+          },
+
+          {
+            "@ondc/org/item_id": "F1",
+            "title": "Convenience Fee",
+            "@ondc/org/title_type": "misc",
+            "price": {
+              "currency": "INR",
+              "value": "10"
+            }
+          }
+        ],
+        "ttl": "P1D"
+      },
+      "payment": {
+        "uri": "https://ondc.transaction.com/payment",
+        "tl_method": "http/get",
+        "params": {
+          "currency": "INR",
+          "transaction_id102": "3937",
+          "amount103": "245"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "Percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "beneficiary_name": "xxxxx",
+            "settlement_type": "upi",
+            "upi_address": "gft@oksbi",
+            "settlement_bank_account_no": "XXXXXXXXXX",
+            "settlement_ifsc_code": "XXXXXXXXX",
+            "bank_name": "xxxx",
+            "branch_name": "xxxx"
+          }
+        ]
+      },
+      "documents104": [
+        {
+          "url": "https://invoice_url",
+          "label": "Invoice"
+        }
+      ],
+      "created_at105": "2023-02-03T09:30:00.000Z",
+      "updated_at": "2023-02-03T09:31:30.000Z"
+    }
+  }
+}

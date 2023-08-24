@@ -1,0 +1,122 @@
+{
+  "context": {
+    "domain": "nic2004:52110",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_update",
+    "core_version": "1.1.0",
+    "bap_id": "buyerapp.com",
+    "bap_uri": "https://buyerapp.com/ondc",
+    "bpp_id": "sellerapp.com",
+    "bpp_uri": "https://sellerapp.com/ondc",
+    "transaction_id": "9fdb667c-76c6-456a-9742-ba9caa5eb765",
+    "message_id": "1655281254865",
+    "timestamp": "2023-02-03T10:30:30.000Z"
+  },
+  "message": {
+    "order": {
+      "id": "O2",
+      "state": "Completed",
+      "items": [
+        {
+          "id": "I1",
+          "fulfillment_id": "F1",
+          "quantity": {
+            "count": 2
+          }
+        },
+        {
+          "id": "I1",
+          "fulfillment_id": "F1-ReverseQC",
+          "quantity": {
+            "count": 2
+          },
+          "tags": {
+            "status": "Return_Approved120"
+          }
+        },
+
+        {
+          "id": "I2",
+          "fulfillment_id": "F1",
+          "quantity": {
+            "count": 2
+          }
+        },
+        {
+          "id": "I2",
+          "fulfillment_id": "F1",
+          "quantity": {
+            "count": 3
+          },
+          "tags": {
+            "status": "Cancelled"
+          }
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "30.0"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "I1",
+            "@ondc/org/title_type": "item",
+            "@ondc/org/item_quantity": {
+              "count": 2
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "5.0"
+              }
+            }
+          },
+          {
+            "@ondc/org/item_id": "I2",
+            "@ondc/org/title_type": "item",
+            "@ondc/org/item_quantity": {
+              "count": 2
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "10.0"
+              }
+            }
+          }
+        ]
+      },
+
+      "fulfillments": [
+        {
+          "id": "F1-ReverseQC",
+          "type": "Reverse QC",
+          "state": {
+            "descriptor": {
+              "code": "Pending"
+            }
+          },
+          "start": {
+            "time": {
+              "range": {
+                "start": "2022-02-06T10:00:00.000Z",
+                "end": "2022-02-06T10:30:00.000Z"
+              }
+            },
+            "instructions": {
+              "short_desc": "XYZ1",
+              "long_desc": "QR code will be attached to package",
+              "additional_desc": {
+                "content_type": "text/html",
+                "url": "URL for instructions"
+              },
+              "images": ["URL or data string as per spec"]
+            }
+          }
+        }
+      ]
+    }
+  }
+}
